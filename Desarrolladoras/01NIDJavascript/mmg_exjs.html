@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author:" content="Marina Madrid García">
+        <title>Comprobación de DNI</title>
+        <link rel="stylesheet" href="mmg_exjs.css">
+    </head>
+    <body>
+        <header>Verificación de la letra del DNI</header>
+        
+        <p>
+            ¿Sabe cómo se calcula la letra de DNI? Compruébelo en esta página web, solo debe introducir el número de DNI que quiera saber, y la letra que usted crea.
+        </p>
+
+        <p>
+            <label for="number">Número:</label>
+            <input type="text" name="number" id="number" onkeypress="onEnterProcess(event)" required maxlength="8" placeholder="XXXXXXXX">
+        </p>
+
+        <p>
+            <label for="letter">Letra:</label>
+            <input type="text" name="letter" id="letter" onkeypress="onEnterProcess(event)" required maxlength="1" placeholder="X">
+        </p>
+
+        <div class="buttons">
+            <p>
+            <button onclick="process()" id="benter">Enter</button>
+            <button onclick="deleteAll()" id="bdelete">Delete</button>
+            </p>
+        </div>
+
+        <div class="result1"></div>
+
+        <div class="result2"></div>
+
+        <script src="mmg_exjs.js"></script>
+    </body>
+</html>

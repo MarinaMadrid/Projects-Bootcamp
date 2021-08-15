@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API's HTML</title>
+</head>
+<body>
+    <div id="presentation">
+        <header>Reproductor de video</header>
+        <p>Por favor, adjunte el video que desea ver:</p>
+        <p>
+            <label for="uploadedVideo">Cargar:</label>
+            <input type="file" name="uploadedVideo" id="uploadedVideo" onchange="process()" accept=".mp4,.ogg,.webm">
+        </p>
+        <p>
+            <button onclick="deleteAll()" id="bdelete">Borrar</button>
+        </p>
+    </div>
+
+    <div id="media"></div>
+    <div id="buttons"></div>
+    <script src="mmg_exapi.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+
+header{
+    margin: 2em;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+p{
+    margin-left: 1em;
+    margin-bottom: 2em;
+}
+
+.buttons{
+    display: inline-block;
+}
+
+#benter, #bdelete{
+    width: 70px;
+    height: 30px;
+    border-style: ridge;
+    border-radius: 3px;
+}
+
+h1{
+    margin-left: 1em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+h3{
+    margin-left: 1.7em;
+    text-align: center;
+}
+
+.greencolor{
+    color: green;
+}
+
+.redcolor{
+    color: red;
+}

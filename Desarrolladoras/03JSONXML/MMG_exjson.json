@@ -1,0 +1,173 @@
+{   
+    "supermarket": [
+        {
+            "name": "eroski",
+            "address": {
+                "street": "Gabriel Celaya",
+                "number": 27,
+                "postcode": 29002,
+                "town": "Málaga",
+                "province": "Málaga"
+            },
+
+            "geolocalization": {
+                "lat": 36.715586,
+                "lon": -4.4349257
+            },
+
+            "products": [
+                {
+                  "name": "manzana",
+                  "type": "pink lady",
+                  "currency": "euro",
+                  "sale": {
+                      "offer": 0.85,
+                      "expirationDate": "31/03/21"
+                    },
+                  "number": 3,
+                  "measurement": "kg",
+                  "unitPrice": 0.85, 
+                  "totalPrice": 2.55,
+                  "bought": true
+                },
+
+                {
+                  "name": "chocolate",
+                  "type": "negro",
+                  "currency": "euro",
+                  "sale": null,
+                  "number": 2,
+                  "measurement": "tableta",
+                  "unitPrice": 1.00,
+                  "totalPrice": 2.00,
+                  "bought": false    
+                },
+
+                {
+                  "name": "agua",
+                  "type": "sin gas",
+                  "currency": "euro",
+                  "sale": {
+                      "offer": "2ªunidad a 70%",
+                      "expirationDate": "26/03/21"
+                    },
+                  "number": 4,
+                  "measurement": "botella",
+                  "bottleLitres": 1,
+                  "unitPrice": 0.70,
+                  "totalPrice": 2.38,
+                  "bought": false    
+                }
+            ]
+        },
+
+        {
+            "name": "carrefour",
+            "address": {
+                "street": "Saint Exupéry",
+                "number": 22,
+                "postcode": 29007,
+                "town": "Málaga",
+                "province": "Málaga"
+            },
+
+            "geolocalization": {
+                "lat": 36.71549,
+                "lon": -4.4582173
+            },
+
+            "products": [
+                {
+                    "name": "chucherías",
+                    "currency": "euro",
+                    "sale": null,
+                    "number": 100,
+                    "measurement": "g",
+                    "unitPrice": 1.20, 
+                    "totalPrice": 1.20,
+                    "bought": true
+                },
+
+                {
+                    "name": "aceite",
+                    "type": "virgen extra",
+                    "currency": "euro",
+                    "sale": {
+                        "offer": "2ªunidad a 70%",
+                        "expirationDate": "28/03/21"
+                    },
+                    "number": 2,
+                    "measurement": "botella",
+                    "bottleLitres": 1,
+                    "unitPrice": 1.50,
+                    "totalPrice": 2.55,
+                    "bought": false    
+                },
+
+                {
+                    "name": "pan",
+                    "type": "piña",
+                    "currency": "euro",
+                    "sale": {
+                        "offer": "2x1",
+                        "expirationDate": "31/03/21"
+                    },
+                    "number": 2,
+                    "measurement": "barra",
+                    "unitPrice": 0.80,
+                    "totalPrice": 0.80,
+                    "bought": true  
+                }
+            ]
+        },
+
+        {
+            "name": "hipercor",
+            "address": {
+                "street": "Shanti Andía",
+                "number": 15,
+                "postcode": 29006,
+                "town": "Málaga",
+                "province": "Málaga"
+            },
+
+            "geolocalization": {
+                "lat": 36.7095451,
+                "lon": -4.4625307
+            },
+
+            "products": [
+                {
+                    "name": "naranja",
+                    "currency": "euro",
+                    "sale": {
+                        "offer": 0.85,
+                        "expirationDate": "31/03/21"
+                    },
+                    "number": 5,
+                    "measurement": "kg",
+                    "unitPrice": 0.85, 
+                    "totalPrice": 4.25,
+                    "bought": true
+                },
+
+                {
+                    "name": "yogur",
+                    "type": "fresa",
+                    "currency": "euro",
+                    "sale": {
+                        "offer": "2ªunidad a 70%",
+                        "expirationDate": "28/03/21"
+                    },
+                    "number": 1,
+                    "measurement": "pack",
+                    "packUnits": 6,
+                    "unitPrice": 1.25,
+                    "totalPrice": 2.125,
+                    "bought": false    
+                }
+            ]
+        }
+
+    ]
+}
