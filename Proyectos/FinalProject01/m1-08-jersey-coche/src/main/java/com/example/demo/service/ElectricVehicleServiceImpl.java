@@ -15,7 +15,7 @@ import com.example.demo.domain.pieces.Engine;
 import com.example.demo.domain.vehicles.ElectricVehicle;
 
 @Service
-public class ElectricVehicleServicelmpl implements ElectricVehicleService {
+public class ElectricVehicleServiceImpl implements ElectricVehicleService {
 
 	/**
 	 * Emulates a database with java hashmap
