@@ -4,9 +4,9 @@ import com.example.demo.domain.vehicles.Vehicle;
 
 public class FactoryVehicle {
 	
-	private static final String COMBUSTIONVEHICLE = "combustionVehicle";
-	private static final String ELECTRICVEHICLE = "electricVehicle";
-	private static final String HYBRIDVEHICLE = "hybridVehicle";
+	public static final String COMBUSTIONVEHICLE = "combustionVehicle";
+	public static final String ELECTRICVEHICLE = "electricVehicle";
+	public static final String HYBRIDVEHICLE = "hybridVehicle";
 
 	private FactoryVehicle() {}
 
