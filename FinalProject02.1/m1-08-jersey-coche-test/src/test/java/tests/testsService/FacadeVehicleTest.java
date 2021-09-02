@@ -13,30 +13,30 @@ import com.example.demo.service.FacadeVehicle;
 class FacadeVehicleTest {
 
 	@Test
-	void testCreateCombustionVehicle(){
-		
+	void testCreateCombustionVehicle() {
+
 		Vehicle combustionVehicle = FacadeVehicle.createCombustionVehicle();
-		
+
 		assertNotNull(combustionVehicle);
 		assertTrue(combustionVehicle instanceof CombustionVehicle);
 		assertEquals(1L, combustionVehicle.getId());
 	}
-	
+
 	@Test
-	void testCreateElectricVehicle(){
-		
+	void testCreateElectricVehicle() {
+
 		Vehicle electricVehicle = FacadeVehicle.createElectricVehicle();
-		
+
 		assertNotNull(electricVehicle);
 		assertTrue(electricVehicle instanceof ElectricVehicle);
 		assertEquals(1L, electricVehicle.getId());
 	}
-	
+
 	@Test
-	void testCreateHybridVehicle(){
-		
+	void testCreateHybridVehicle() {
+
 		Vehicle hybridVehicle = FacadeVehicle.createHybridVehicle();
-		
+
 		assertNotNull(hybridVehicle);
 		assertTrue(hybridVehicle instanceof HybridVehicle);
 		assertEquals(1L, hybridVehicle.getId());
