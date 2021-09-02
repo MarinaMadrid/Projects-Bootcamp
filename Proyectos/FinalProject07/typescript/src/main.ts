@@ -1,34 +1,36 @@
-//import * as readline from 'readline-sync';
-import {List} from './lista'
-import {Product} from './producto'
+import {ListaCompra} from './lista';
+import {Producto} from './producto';
 
-//Productos
-const chocolate = new Product('chocolate', 1.35)
-const leche = new Product('leche', 0.79)
-const galletas = new Product('galletas', 1.07)
-const macarrones = new Product('macarrones', 0.70)
-const pizza = new Product('pizza', 2.85)
+//Se crea la lista de la compra, la cual está vacía
+let listaCompra: ListaCompra = new ListaCompra;
 
-function agregarNuevoProducto(producto: Product) {
-    this.listado.push(producto);
-}
+//Productos que añadir
+let producto1:Producto = new Producto('chocolate', 1.35);
+let producto2:Producto = new Producto('leche', 0.79);
+let producto3:Producto = new Producto('galletas', 1.07);
+let producto4:Producto = new Producto('macarrones', 0.70);
+let producto5:Producto = new Producto('pizza', 2.85);
+let producto6:Producto = new Producto("atún", 1.90);
 
-function modificarProducto(indice: number, producto: Product) {
-    this.listado[indice] = producto;
-}
+//Se añaden los productos con la función "agregarNuevoProducto"
+listaCompra.agregarNuevoProducto(producto1);
+listaCompra.agregarNuevoProducto(producto2);
+listaCompra.agregarNuevoProducto(producto3);
+listaCompra.agregarNuevoProducto(producto4);
+listaCompra.agregarNuevoProducto(producto5);
+listaCompra.agregarNuevoProducto(producto6);
+console.log(`\nSe han añadido los productos al carrito. \n`)
 
-function mostrarListado(indice?: number) {
-    if(indice) { console.log("El producto que necesitas comprar es: ", this.listado[indice]); }
-    else { console.log("Los productos que necesitas comprar son: ", this.listado); }
-}
+//Se muestra la lista con todos los productos añadidos
+listaCompra.mostrarListaCompra();
 
-function borrarProducto(indice:number) {
-    this.borrar.emit(this.id)
-}
+//Vamos a borrar el atún(producto6 y está en la posición 5(listaCompra[5]), por lo que su índice será 5
+listaCompra.borrarProducto(5);
+console.log(` \nSe ha quitado ${producto6.nombre} del carrito. \n`)
 
-function sumaPrecio(...valores:number[]) {
-    let suma = 0;
-    for(let x=0; x<valores.length; x++)
-        suma+=valores[];
-    return suma;
-}
+//Se muestra la lista con los productos añadidos y con el atún borrado
+listaCompra.mostrarListaCompra();
+
+//Vamos a calcular el precio total de lista de la compra
+let precioTotal:number = listaCompra.calcularPrecioTotal();
+console.log(`El precio total de la compra es: ${precioTotal} €.`)

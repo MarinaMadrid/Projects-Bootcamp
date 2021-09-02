@@ -1,4 +1,4 @@
-export class Product {
+export class Producto {
     constructor(
         private _nombre:string,
         private _precio:number
@@ -8,6 +8,7 @@ export class Product {
         return `Producto: {nombre: ${this.nombre}, precio: ${this.precio}}`;
     }
 
+    //Get and set
     get nombre():string{
         return this._nombre;
     }
@@ -25,7 +26,8 @@ export class Product {
     }
 }
 
-export const defaultProduct = new Product(
-    'name',
-    2.50
+//Producto por defecto
+export const defaultProduct = new Producto(
+    'producto',
+    0
 )
