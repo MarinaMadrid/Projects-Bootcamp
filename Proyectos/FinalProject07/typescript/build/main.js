@@ -27,5 +27,5 @@ console.log(" \nSe ha quitado " + producto6.nombre + " del carrito. \n");
 //Se muestra la lista con los productos añadidos y con el atún borrado
 listaCompra.mostrarListaCompra();
 //Vamos a calcular el precio total de lista de la compra
-var precioTotal = listaCompra.calcularPrecioTotal();
-console.log("El precio total de la compra es: " + precioTotal + " \u20AC.");
+listaCompra.calcularPrecioTotal();
+console.log("El precio total de la compra es: " + listaCompra.totalPrecio + " \u20AC.");

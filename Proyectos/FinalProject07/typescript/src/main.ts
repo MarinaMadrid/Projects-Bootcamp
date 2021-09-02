@@ -32,5 +32,5 @@ console.log(` \nSe ha quitado ${producto6.nombre} del carrito. \n`)
 listaCompra.mostrarListaCompra();
 
 //Vamos a calcular el precio total de lista de la compra
-let precioTotal:number = listaCompra.calcularPrecioTotal();
-console.log(`El precio total de la compra es: ${precioTotal} €.`)
+listaCompra.calcularPrecioTotal();
+console.log(`El precio total de la compra es: ${listaCompra.totalPrecio} €.`)

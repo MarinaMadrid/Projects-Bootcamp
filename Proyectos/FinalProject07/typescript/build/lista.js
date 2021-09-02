@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ListaCompra = void 0;
-var producto_1 = require("../src/producto");
+var producto_1 = require("./producto");
 var ListaCompra = /** @class */ (function () {
     function ListaCompra(_producto, _totalPrecio) {
         if (_producto === void 0) { _producto = producto_1.defaultProduct; }
@@ -22,7 +22,7 @@ var ListaCompra = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(ListaCompra.prototype, "suma", {
+    Object.defineProperty(ListaCompra.prototype, "totalPrecio", {
         get: function () {
             return this._totalPrecio;
         },

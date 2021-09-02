@@ -18,11 +18,11 @@ export class ListaCompra {
         this._producto = nuevoProducto;
     }
 
-    get suma():number{
+    get totalPrecio():number{
         return this._totalPrecio;
     }
 
-    set suma(nuevoTotalPrecio:number){
+    set totalPrecio(nuevoTotalPrecio:number){
         this._totalPrecio = nuevoTotalPrecio;
     }
 
