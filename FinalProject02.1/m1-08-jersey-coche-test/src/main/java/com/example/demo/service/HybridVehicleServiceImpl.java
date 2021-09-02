@@ -81,8 +81,6 @@ public class HybridVehicleServiceImpl implements HybridVehicleService {
 
 	@Override
 	public boolean delete(Long id) {
-		if (id == null || !hybridvehicles.containsKey(id))
-			return false;
 		hybridvehicles.remove(id);
 		return true;
 	}
@@ -128,7 +126,7 @@ public class HybridVehicleServiceImpl implements HybridVehicleService {
 	public List<HybridVehicle> findByAirAc(AirConditioning airAc){
 		List<HybridVehicle> results = new ArrayList<HybridVehicle>();
 		for(HybridVehicle hybridVehicle : hybridvehicles.values())
-			if(hybridVehicle.getAirAc() == airAc)
+			if(hybridVehicle.getAirAc().getStatusAirConditioning() == airAc.getStatusAirConditioning())
 				results.add(hybridVehicle);
 		return results;
 	}

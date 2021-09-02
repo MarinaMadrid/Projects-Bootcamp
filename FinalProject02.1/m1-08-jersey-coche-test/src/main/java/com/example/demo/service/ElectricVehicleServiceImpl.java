@@ -80,8 +80,6 @@ public class ElectricVehicleServiceImpl implements ElectricVehicleService {
 
 	@Override
 	public boolean delete(Long id) {
-		if (id == null || !electricvehicles.containsKey(id))
-			return false;
 		electricvehicles.remove(id);
 		return true;
 	}
@@ -130,7 +128,7 @@ public class ElectricVehicleServiceImpl implements ElectricVehicleService {
 	public List<ElectricVehicle> findByAirAc(AirConditioning airAc){
 		List<ElectricVehicle> results = new ArrayList<ElectricVehicle>();
 		for(ElectricVehicle electricVehicle : electricvehicles.values())
-			if(electricVehicle.getAirAc() == airAc)
+			if(electricVehicle.getAirAc().getStatusAirConditioning() == airAc.getStatusAirConditioning())
 				results.add(electricVehicle);
 		return results;
 	}
