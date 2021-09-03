@@ -128,10 +128,7 @@ class EventTest {
 	@Test
 	@DisplayName("Adding Speaker Test")
 	void addSpeakerTest() {
-		Speaker speaker = new Speaker();
-		speaker.setId(1L);
-		speaker.setName("Esteban");
-		speaker.setExpertise("Marketing");
+		Speaker speaker = new Speaker(1L, "Esteban", "Marketing");
 		event.addSpeaker(speaker);;
 		assertEquals(1, event.getSpeakers().size());
 	}
@@ -139,11 +136,16 @@ class EventTest {
 	@Test
 	@DisplayName("Adding Speaker Null Test")
 	void addSpeakerNullTest() {
-		Speaker speaker = new Speaker();
-		speaker.setId(1L);
-		speaker.setName("Esteban");
-		speaker.setExpertise("Marketing");
 		event.addSpeaker(null);;
+		assertEquals(0, event.getSpeakers().size());
+	}
+	
+	@Test
+	@DisplayName("Removing Speaker Test")
+	void removeSpeakerTest() {
+		Speaker speaker = new Speaker(1L, "Esteban", "Marketing");
+		event.addSpeaker(speaker);
+		event.removeSpeaker(speaker);
 		assertEquals(0, event.getSpeakers().size());
 	}
 	
