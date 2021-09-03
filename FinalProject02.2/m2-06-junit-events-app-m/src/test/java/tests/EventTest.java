@@ -54,7 +54,7 @@ class EventTest {
 	}
 	
 	@Test
-	@DisplayName("Adding Attendess Test")
+	@DisplayName("Adding Attendees Test")
 	void addAttendeesTest() {
 		List<Attendee> attendees = new ArrayList<Attendee>();
 		Attendee person1 = new Attendee(1L, "Marina", "marina@gmail.com");
@@ -62,6 +62,17 @@ class EventTest {
 		attendees.add(person1);
 		attendees.add(person2);
 		event.addAttendees(attendees);
+	}
+	
+	@Test
+	@DisplayName("Adding Attendees List Null Test")
+	void addAttendeesListNullTest() throws Exception {
+		event.setAttendees(null);
+		List<Attendee> attendees = new ArrayList<Attendee>();
+		Attendee person1 = new Attendee(1L, "Marina", "marina@gmail.com");
+		attendees.add(person1);
+		event.addAttendees(attendees);
+		assertEquals(event.getAttendees().size(), 1);
 	}
 	
 }
