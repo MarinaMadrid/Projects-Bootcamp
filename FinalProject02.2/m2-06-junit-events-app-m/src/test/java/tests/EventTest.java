@@ -57,10 +57,10 @@ class EventTest {
 	@DisplayName("Adding Attendees Test")
 	void addAttendeesTest() {
 		List<Attendee> attendees = new ArrayList<Attendee>();
-		Attendee person1 = new Attendee(1L, "Marina", "marina@gmail.com");
-		Attendee person2 = new Attendee(2L, "Esteban", "esteban@gmail.com");
-		attendees.add(person1);
-		attendees.add(person2);
+		Attendee attendee1 = new Attendee(1L, "Marina", "marina@gmail.com");
+		Attendee attendee2 = new Attendee(2L, "Esteban", "esteban@gmail.com");
+		attendees.add(attendee1);
+		attendees.add(attendee2);
 		event.addAttendees(attendees);
 	}
 	
@@ -69,8 +69,8 @@ class EventTest {
 	void addAttendeesListNullTest() throws Exception {
 		event.setAttendees(null);
 		List<Attendee> attendees = new ArrayList<Attendee>();
-		Attendee person1 = new Attendee(1L, "Marina", "marina@gmail.com");
-		attendees.add(person1);
+		Attendee attendee = new Attendee(1L, "Marina", "marina@gmail.com");
+		attendees.add(attendee);
 		event.addAttendees(attendees);
 		assertEquals(event.getAttendees().size(), 1);
 	}
@@ -94,5 +94,14 @@ class EventTest {
 		assertEquals(1, event.getAttendees().size());
 	}
 	
-	
+	@Test
+	@DisplayName("Removing Attendees Test")
+	void removeAttendeesTest() {
+		List<Attendee> attendees = new ArrayList<Attendee>();
+		Attendee attendee = new Attendee(1L, "Marina", "marina@gmail.com");
+		attendees.add(attendee);
+		event.addAttendees(attendees);
+		event.removeAttendees(attendees);
+		assertEquals(0, event.getAttendees().size());
+	}
 }
