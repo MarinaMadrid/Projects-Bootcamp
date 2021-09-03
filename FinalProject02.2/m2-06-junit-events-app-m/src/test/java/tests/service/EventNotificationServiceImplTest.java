@@ -49,14 +49,26 @@ class EventNotificationServiceImplTest {
 	}
 	
 	@Test
-	@DisplayName("Announcing Without Attendes Test")
-	void announceWithoutAttendesTest() {
-		attendee = new Attendee(1L , "Marina", "marina@gmail.com");
+	@DisplayName("Announcing Null Attendees Test")
+	void announceNullAttendeesTest() {
+		Attendee attendee = new Attendee(1L , "Marina", "marina@gmail.com");
+		Event event = new Event(1l, "Barcelona Cybersecurity Congress", EventType.TECH, new EventNotificationServiceImpl());
+		event.setAttendees(null);
+		eventNotificationServiceImpl.announce(event);
+		assertEquals(0, attendee.getNotifications().size());
+	}
+	
+	@Test
+	@DisplayName("Announcing Without Attendees Test")
+	void announceWithoutAttendeesTest() {
+		Attendee attendee = new Attendee(1L , "Marina", "marina@gmail.com");
 		Event event = new Event(1l, "Barcelona Cybersecurity Congress", EventType.TECH, new EventNotificationServiceImpl());
 		event.addAttendee(attendee);
 		event.getAttendees().clear();
 		event.notifyAssistants();
 		assertEquals(0, attendee.getNotifications().size());
 	}
+	
+	
 	
 }

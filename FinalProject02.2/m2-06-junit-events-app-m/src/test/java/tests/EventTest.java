@@ -38,15 +38,15 @@ class EventTest {
 	}
 	
 	@Test
-	@DisplayName("Adding Attendee Null Test")
-	void addAttendeeNullTest() {
+	@DisplayName("Adding Null Attendee Test")
+	void addNullAttendeeTest() {
 		event.addAttendee(null);
 		assertEquals(0, event.getAttendees().size());
 	}
 	
 	@Test
-	@DisplayName("Adding Attendee List Null Test")
-	void addAttendeeListNull() throws Exception {
+	@DisplayName("Adding Null Attendee List Test")
+	void addNullAttendeeList() throws Exception {
 		Event event = new Event(1l, "Barcelona Cybersecurity Congress", EventType.TECH, new EventNotificationServiceImpl());
 
 		event.setAttendees(null);
@@ -89,11 +89,12 @@ class EventTest {
 		attendees.add(attendee1);
 		attendees.add(attendee2);
 		event.addAttendees(attendees);
+		assertEquals(attendees.size(), event.getAttendees().size());
 	}
 	
 	@Test
-	@DisplayName("Adding Attendees List Null Test")
-	void addAttendeesListNullTest() throws Exception {
+	@DisplayName("Adding Null Attendees List Test")
+	void addNullAttendeesListTest() throws Exception {
 		event.setAttendees(null);
 		List<Attendee> attendees = new ArrayList<Attendee>();
 		Attendee attendee = new Attendee(1L, "Marina", "marina@gmail.com");
@@ -115,8 +116,8 @@ class EventTest {
 	}
 	
 	@Test
-	@DisplayName("Removing Attendees Null Test")
-	void removeAttendeesNullTest() {
+	@DisplayName("Removing Null Attendees Test")
+	void removeNullAttendeesTest() {
 		List<Attendee> attendees = null;
 	    event.removeAttendees(attendees);
 		assertEquals(0, event.getAttendees().size());
@@ -134,8 +135,8 @@ class EventTest {
 	}
 	
 	@Test
-	@DisplayName("Adding Speaker Null Test")
-	void addSpeakerNullTest() {
+	@DisplayName("Adding Null Speaker Test")
+	void addNullSpeakerTest() {
 		event.addSpeaker(null);;
 		assertEquals(0, event.getSpeakers().size());
 	}
@@ -150,8 +151,8 @@ class EventTest {
 	}
 	
 	@Test
-	@DisplayName("Removing Speaker Null Test")
-	void removeSpeakerNullTest() {
+	@DisplayName("Removing Null Speaker Test")
+	void removeNullSpeakerTest() {
 		Speaker speaker = new Speaker(1L, "Esteban", "Marketing");
 		event.addSpeaker(speaker);;
 		event.removeSpeaker(null);;
