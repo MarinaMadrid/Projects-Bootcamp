@@ -75,4 +75,13 @@ class EventTest {
 		assertEquals(event.getAttendees().size(), 1);
 	}
 	
+	@Test
+	@DisplayName("Removing Attendee Test")
+	void removeAttendeeTest() {
+		Attendee attendee = new Attendee(1L , "Marina", "marina@gmail.com");
+		event.addAttendee(attendee);
+		event.removeAttendee(attendee);
+		assertEquals(0, event.getAttendees().size());
+	}
+	
 }
