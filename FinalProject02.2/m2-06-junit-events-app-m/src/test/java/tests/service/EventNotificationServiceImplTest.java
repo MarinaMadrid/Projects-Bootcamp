@@ -79,6 +79,19 @@ class EventNotificationServiceImplTest {
 		assertEquals(0, attendee.getNotifications().size());
 	}
 	
+	/*
+	 * Tests about confirming attendance
+	 * */
 	
+	@Test
+	@DisplayName("Confirming Attendance Test")
+	void confirmAttendanceTest() {
+		Attendee attendee = new Attendee(1L , "Marina", "marina@gmail.com");
+		Event event = new Event(1l, "Barcelona Cybersecurity Congress", EventType.TECH, new EventNotificationServiceImpl());
+		event.addAttendee(attendee);
+		event.notifyAssistants();
+		eventNotificationServiceImpl.confirmAttendance(event,attendee);
+		assertEquals("Dear Attendee, your subscription to the event has been confirmed successfully.", attendee.getNotifications().get(1).getMessage());
+	}
 	
 }
