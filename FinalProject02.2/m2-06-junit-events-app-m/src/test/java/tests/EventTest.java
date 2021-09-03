@@ -2,6 +2,9 @@ package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,7 +23,7 @@ class EventTest {
 	void setUp() throws Exception {
 		event = new Event();
 	}
-
+	
 	@Test
 	@DisplayName("Adding Attendee Test")
 	void addAttendeeTest() {
@@ -38,7 +41,7 @@ class EventTest {
 	}
 	
 	@Test
-	@DisplayName("Adding Attendee List Null")
+	@DisplayName("Adding Attendee List Null Test")
 	void addAttendeeListNull() throws Exception {
 		Event evento = new Event(1l, "Barcelona Cybersecurity Congress", EventType.TECH, new EventNotificationServiceImpl());
 
@@ -50,5 +53,15 @@ class EventTest {
 		assertEquals(1, evento.getAttendees().size());
 	}
 	
+	@Test
+	@DisplayName("Adding Attendess Test")
+	void addAttendeesTest() {
+		List<Attendee> attendees = new ArrayList<Attendee>();
+		Attendee person1 = new Attendee(1L, "Marina", "marina@gmail.com");
+		Attendee person2 = new Attendee(2L, "Esteban", "esteban@gmail.com");
+		attendees.add(person1);
+		attendees.add(person2);
+		event.addAttendees(attendees);
+	}
 	
 }
