@@ -80,7 +80,7 @@ class EventNotificationServiceImplTest {
 	}
 	
 	/*
-	 * Tests about confirming attendance
+	 * Tests about confirming attendance an event
 	 * */
 	
 	@Test
