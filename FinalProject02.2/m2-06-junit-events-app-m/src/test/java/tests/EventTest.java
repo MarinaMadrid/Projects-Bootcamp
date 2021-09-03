@@ -149,4 +149,14 @@ class EventTest {
 		assertEquals(0, event.getSpeakers().size());
 	}
 	
+	@Test
+	@DisplayName("Removing Speaker Null Test")
+	void removeSpeakerNullTest() {
+		Speaker speaker = new Speaker(1L, "Esteban", "Marketing");
+		event.addSpeaker(speaker);;
+		event.removeSpeaker(null);;
+		assertEquals(1, event.getSpeakers().size());
+	}
+	
+	
 }
