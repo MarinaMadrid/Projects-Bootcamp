@@ -49,6 +49,16 @@ class EventNotificationServiceImplTest {
 	}
 	
 	@Test
+	@DisplayName("Announcing Null Event Test")
+	void announceNullEventTest() {
+		Attendee attendee = new Attendee(1L , "Marina", "marina@gmail.com");
+		Event event = new Event(1l, "Barcelona Cybersecurity Congress", EventType.TECH, new EventNotificationServiceImpl());
+		event.addAttendee(attendee);
+		eventNotificationServiceImpl.announce(null);
+		assertEquals(0, attendee.getNotifications().size());
+	}
+	
+	@Test
 	@DisplayName("Announcing Null Attendees Test")
 	void announceNullAttendeesTest() {
 		Attendee attendee = new Attendee(1L , "Marina", "marina@gmail.com");
