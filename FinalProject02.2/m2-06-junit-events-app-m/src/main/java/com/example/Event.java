@@ -3,7 +3,6 @@ package com.example;
 import com.example.service.EventNotificationService;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 // SUT system under test o Class Under Test

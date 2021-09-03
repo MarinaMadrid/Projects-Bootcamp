@@ -158,5 +158,24 @@ class EventTest {
 		assertEquals(1, event.getSpeakers().size());
 	}
 	
-	
+	/*
+	 * Test about get and set
+	 * */
+	@Test
+	@DisplayName("GetSet Test")
+	void getSetTest() {
+		event.setId(1L);
+		event.setTitle("Barcelona Cybersecurity Congress");
+		event.setType(EventType.TECH);
+		List<Attendee> attendees = new ArrayList<Attendee>();
+		event.setAttendees(attendees);
+		List<Speaker> speakers = new ArrayList<Speaker>();
+		event.setSpeakers(speakers);
+		
+		assertEquals(1L, event.getId());
+		assertEquals("Barcelona Cybersecurity Congress", event.getTitle());
+		assertEquals(EventType.TECH, event.getType());
+		assertEquals(attendees, event.getAttendees());
+		assertEquals(speakers, event.getSpeakers());
+	}
 }
