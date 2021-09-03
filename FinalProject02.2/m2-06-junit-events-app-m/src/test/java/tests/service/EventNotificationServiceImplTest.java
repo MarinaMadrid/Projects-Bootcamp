@@ -104,4 +104,14 @@ class EventNotificationServiceImplTest {
 		assertEquals(0, attendee.getNotifications().size());
 	}
 	
+	@Test
+	@DisplayName("Confirming Attendance Null Attendee Test")
+	void confirmAttendanceNullAttendeeTest() {
+		Attendee attendee = new Attendee(1L , "Marina", "marina@gmail.com");
+		Event event = new Event(1l, "Barcelona Cybersecurity Congress", EventType.TECH, new EventNotificationServiceImpl());
+		event.addAttendee(attendee);
+		eventNotificationServiceImpl.confirmAttendance(event,null);
+		assertEquals(0, attendee.getNotifications().size());
+	}
+	
 }
