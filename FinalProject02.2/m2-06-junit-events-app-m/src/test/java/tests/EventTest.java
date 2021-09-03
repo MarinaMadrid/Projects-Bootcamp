@@ -23,10 +23,19 @@ class EventTest {
 
 	@Test
 	@DisplayName("Adding Attendee Test")
-	void testAddAttendeeTest() {
+	void addAttendeeTest() {
 		Attendee person1 = new Attendee(1L, "Marina", "marina@gmail.com");
 		event.addAttendee(person1);
 		assertEquals(1, event.getAttendees().size());
 		assertEquals("Marina", event.getAttendees().get(0).getNickname());
 	}
+	
+	@Test
+	@DisplayName("Adding Attendee Null Test")
+	void addAttendeeNullTest() {
+		event.addAttendee(null);
+		assertEquals(0, event.getAttendees().size());
+	}
+	
+	
 }
