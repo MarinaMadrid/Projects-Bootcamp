@@ -35,6 +35,7 @@ class EventNotificationServiceImplTest {
 	void setUp() throws Exception {
 		eventNotificationServiceImpl = new EventNotificationServiceImpl();
 		attendee = new Attendee();
+		event = new Event();
 	}
 	
 	/*
