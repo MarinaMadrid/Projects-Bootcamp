@@ -37,5 +37,18 @@ class EventTest {
 		assertEquals(0, event.getAttendees().size());
 	}
 	
+	@Test
+	@DisplayName("Adding Attendee List Null")
+	void addAttendeeListNull() throws Exception {
+		Event evento = new Event(1l, "Barcelona Cybersecurity Congress", EventType.TECH, new EventNotificationServiceImpl());
+
+		evento.setAttendees(null);
+		assertEquals(null, evento.getAttendees());
+		Attendee person1 = new Attendee(1L, "Esteban", "esteban@gmail.com");
+		
+		evento.addAttendee(person1);
+		assertEquals(1, evento.getAttendees().size());
+	}
+	
 	
 }
