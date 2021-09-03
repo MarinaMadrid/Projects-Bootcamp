@@ -37,12 +37,26 @@ class EventNotificationServiceImplTest {
 		attendee = new Attendee();
 	}
 	
+	/*
+	 * Tests about announcing an event
+	 * */
+	
 	@Test
-	@DisplayName("Announcing an event")
+	@DisplayName("Announcing Event Test")
 	void announceTest() {
 		inEvent.notifyAssistants();
 		verify(mockEventNotificationServiceImpl, times(1)).announce(inEvent);
 	}
 	
+	@Test
+	@DisplayName("Announcing Without Attendes Test")
+	void announceWithoutAttendesTest() {
+		attendee = new Attendee(1L , "Marina", "marina@gmail.com");
+		Event event = new Event(1l, "Barcelona Cybersecurity Congress", EventType.TECH, new EventNotificationServiceImpl());
+		event.addAttendee(attendee);
+		event.getAttendees().clear();
+		event.notifyAssistants();
+		assertEquals(0, attendee.getNotifications().size());
+	}
 	
 }

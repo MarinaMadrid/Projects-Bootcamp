@@ -47,14 +47,14 @@ class EventTest {
 	@Test
 	@DisplayName("Adding Attendee List Null Test")
 	void addAttendeeListNull() throws Exception {
-		Event evento = new Event(1l, "Barcelona Cybersecurity Congress", EventType.TECH, new EventNotificationServiceImpl());
+		Event event = new Event(1l, "Barcelona Cybersecurity Congress", EventType.TECH, new EventNotificationServiceImpl());
 
-		evento.setAttendees(null);
-		assertEquals(null, evento.getAttendees());
-		Attendee person1 = new Attendee(1L, "Esteban", "esteban@gmail.com");
+		event.setAttendees(null);
+		assertEquals(null, event.getAttendees());
+		Attendee atendee = new Attendee(1L, "Esteban", "esteban@gmail.com");
 		
-		evento.addAttendee(person1);
-		assertEquals(1, evento.getAttendees().size());
+		event.addAttendee(atendee);
+		assertEquals(1, event.getAttendees().size());
 	}
 	
 	@Test
