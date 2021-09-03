@@ -93,4 +93,6 @@ class EventTest {
 		event.removeAttendee(null);
 		assertEquals(1, event.getAttendees().size());
 	}
+	
+	
 }
