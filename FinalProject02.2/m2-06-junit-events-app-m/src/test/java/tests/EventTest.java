@@ -136,4 +136,15 @@ class EventTest {
 		assertEquals(1, event.getSpeakers().size());
 	}
 	
+	@Test
+	@DisplayName("Adding Speaker Null Test")
+	void addSpeakerNullTest() {
+		Speaker speaker = new Speaker();
+		speaker.setId(1L);
+		speaker.setName("Esteban");
+		speaker.setExpertise("Marketing");
+		event.addSpeaker(null);;
+		assertEquals(0, event.getSpeakers().size());
+	}
+	
 }
