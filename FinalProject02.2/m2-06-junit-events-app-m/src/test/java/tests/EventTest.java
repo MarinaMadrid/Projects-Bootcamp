@@ -24,6 +24,10 @@ class EventTest {
 		event = new Event();
 	}
 	
+	/*
+	 * Tests about an attendee
+	 * */
+	
 	@Test
 	@DisplayName("Adding Attendee Test")
 	void addAttendeeTest() {
@@ -54,6 +58,29 @@ class EventTest {
 	}
 	
 	@Test
+	@DisplayName("Removing Attendee Test")
+	void removeAttendeeTest() {
+		Attendee attendee = new Attendee(1L , "Marina", "marina@gmail.com");
+		event.addAttendee(attendee);
+		event.removeAttendee(attendee);
+		assertEquals(0, event.getAttendees().size());
+	}
+	
+
+	@Test
+	@DisplayName("Removing Attendee Null Test")
+	void removeAttendeeNullTest() {
+		Attendee attendee = new Attendee(1L , "Marina", "marina@gmail.com");
+		event.addAttendee(attendee);
+		event.removeAttendee(null);
+		assertEquals(1, event.getAttendees().size());
+	}
+	
+	
+	/*
+	 * Tests about an ArrayList<attendees>
+	 * */
+	@Test
 	@DisplayName("Adding Attendees Test")
 	void addAttendeesTest() {
 		List<Attendee> attendees = new ArrayList<Attendee>();
@@ -75,25 +102,7 @@ class EventTest {
 		assertEquals(event.getAttendees().size(), 1);
 	}
 	
-	@Test
-	@DisplayName("Removing Attendee Test")
-	void removeAttendeeTest() {
-		Attendee attendee = new Attendee(1L , "Marina", "marina@gmail.com");
-		event.addAttendee(attendee);
-		event.removeAttendee(attendee);
-		assertEquals(0, event.getAttendees().size());
-	}
-	
 
-	@Test
-	@DisplayName("Removing Attendee Null Test")
-	void removeAttendeeNullTest() {
-		Attendee attendee = new Attendee(1L , "Marina", "marina@gmail.com");
-		event.addAttendee(attendee);
-		event.removeAttendee(null);
-		assertEquals(1, event.getAttendees().size());
-	}
-	
 	@Test
 	@DisplayName("Removing Attendees Test")
 	void removeAttendeesTest() {
@@ -113,5 +122,18 @@ class EventTest {
 		assertEquals(0, event.getAttendees().size());
 	}
 	
+	/*
+	 * Tests about a speaker
+	 * */
+	@Test
+	@DisplayName("Adding Speaker Test")
+	void addSpeakerTest() {
+		Speaker speaker = new Speaker();
+		speaker.setId(1L);
+		speaker.setName("Esteban");
+		speaker.setExpertise("Marketing");
+		event.addSpeaker(speaker);;
+		assertEquals(1, event.getSpeakers().size());
+	}
 	
 }
