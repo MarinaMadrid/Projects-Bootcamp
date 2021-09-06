@@ -138,9 +138,12 @@ class ElectricVehicleServiceTest {
 	*/
 
 	@Test
-	void testDeleteOne() {
-		ElectricVehicleServiceImpl veh = new ElectricVehicleServiceImpl();
-		assertTrue(veh.delete(1L));
+	void testDelete() {
+		veh = new ElectricVehicleServiceImpl();
+
+		Long id = 1L;
+		boolean results = veh.delete(id);
+		assertTrue(results);
 	}
 
 	@Test

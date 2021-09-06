@@ -130,9 +130,12 @@ class CombustionVehicleServiceTest {
 	*/
 
 	@Test
-	void testDeleteOne() {
-		CombustionVehicleServiceImpl veh = new CombustionVehicleServiceImpl();
-		assertTrue(veh.delete(1L));
+	void testDelete() {
+		veh = new CombustionVehicleServiceImpl();
+
+		Long id = 1L;
+		boolean results = veh.delete(id);
+		assertTrue(results);
 	}
 
 	@Test

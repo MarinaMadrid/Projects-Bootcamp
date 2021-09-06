@@ -80,11 +80,8 @@ public class ElectricVehicleServiceImpl implements ElectricVehicleService {
 
 	@Override
 	public boolean delete(Long id) {
-		if (electricvehicles.containsKey(id)) {
-			electricvehicles.remove(id);
-			return true;
-		}
-		return false;
+		electricvehicles.remove(id);
+		return true;
 	}
 
 	@Override

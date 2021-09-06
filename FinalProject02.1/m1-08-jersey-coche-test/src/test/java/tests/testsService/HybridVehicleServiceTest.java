@@ -131,9 +131,12 @@ class HybridVehicleServiceTest {
 	*/
 	
 	@Test
-	void testDeleteOne() {
-		HybridVehicleServiceImpl veh = new HybridVehicleServiceImpl();
-		assertTrue(veh.delete(1L));
+	void testDelete() {
+		veh = new HybridVehicleServiceImpl();
+
+		Long id = 1L;
+		boolean results = veh.delete(id);
+		assertTrue(results);
 	}
 
 	@Test
