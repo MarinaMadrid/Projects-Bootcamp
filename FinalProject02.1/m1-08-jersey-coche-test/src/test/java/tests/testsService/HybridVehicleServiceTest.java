@@ -85,7 +85,7 @@ class HybridVehicleServiceTest {
 	@Test
 	void testDeleteOne() {
 		HybridVehicleServiceImpl veh = new HybridVehicleServiceImpl();
-		assertTrue(veh.deleteOne(1L));
+		assertTrue(veh.delete(1L));
 	}
 
 	@Test

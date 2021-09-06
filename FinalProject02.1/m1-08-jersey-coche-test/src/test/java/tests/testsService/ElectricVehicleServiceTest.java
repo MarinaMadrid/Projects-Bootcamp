@@ -91,7 +91,7 @@ class ElectricVehicleServiceTest {
 	@Test
 	void testDeleteOne() {
 		ElectricVehicleServiceImpl veh = new ElectricVehicleServiceImpl();
-		assertTrue(veh.deleteOne(1L));
+		assertTrue(veh.delete(1L));
 	}
 
 	@Test

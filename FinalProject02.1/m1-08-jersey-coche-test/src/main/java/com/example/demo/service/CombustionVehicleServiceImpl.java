@@ -79,7 +79,7 @@ public class CombustionVehicleServiceImpl implements CombustionVehicleService {
 	}
 
 	@Override
-	public boolean deleteOne(Long id) {
+	public boolean delete(Long id) {
 		if (combustionvehicles.containsKey(id)) {
 			combustionvehicles.remove(id);
 			return true;

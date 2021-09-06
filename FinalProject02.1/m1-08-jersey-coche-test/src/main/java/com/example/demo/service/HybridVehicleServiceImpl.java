@@ -80,7 +80,7 @@ public class HybridVehicleServiceImpl implements HybridVehicleService {
 	}
 
 	@Override
-	public boolean deleteOne(Long id) {
+	public boolean delete(Long id) {
 		if (hybridvehicles.containsKey(id)) {
 			hybridvehicles.remove(id);
 			return true;

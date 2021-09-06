@@ -85,7 +85,7 @@ class CombustionVehicleServiceTest {
 	@Test
 	void testDeleteOne() {
 		CombustionVehicleServiceImpl veh = new CombustionVehicleServiceImpl();
-		assertTrue(veh.deleteOne(1L));
+		assertTrue(veh.delete(1L));
 	}
 
 	@Test
