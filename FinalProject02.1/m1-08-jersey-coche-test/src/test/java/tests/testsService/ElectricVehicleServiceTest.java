@@ -82,64 +82,16 @@ class ElectricVehicleServiceTest {
 		assertEquals(2, electricVehicles.size());
 	}
 
-	@Test
-	void testFindByAirConditioningTrue() {
-		veh = new ElectricVehicleServiceImpl();
-		AirConditioning nuevoAirAc = new AirConditioning(true);
-		List<ElectricVehicle> electricVehicles = veh.findByAirAc(nuevoAirAc);
-		assertEquals(2, electricVehicles.size());
-	}
-
-	@Test
-	void testFindByAirConditioningFalse() {
-		veh = new ElectricVehicleServiceImpl();
-		AirConditioning newAirAc = new AirConditioning(false);
-		List<ElectricVehicle> electricVehicles = veh.findByAirAc(newAirAc);
-		assertEquals(0, electricVehicles.size());
-	}
-
-	@Test
-	void testFindByTypeEngine() {
-		veh = new ElectricVehicleServiceImpl();
-		List<ElectricVehicle> electricVehicles = veh.findByTypeEngine();
-		assertEquals(2, electricVehicles.size());
-	}
-
-	@Test
-	void testFindByOnOffTrue() {
-		veh = new ElectricVehicleServiceImpl();
-		List<ElectricVehicle> electricVehicles = veh.findByOnOff(true);
-		assertEquals(2, electricVehicles.size());
-	}
-
-	@Test
-	void testFindByOnOffFalse() {
-		veh = new ElectricVehicleServiceImpl();
-		List<ElectricVehicle> electricVehicles = veh.findByOnOff(false);
-		assertEquals(0, electricVehicles.size());
-	}
-
-	@Test
+		@Test
 	void testFindByLoadingTime() {
 		List<ElectricVehicle> electricVehicles = veh.findByLoadingTime(12);
 		assertEquals(1, electricVehicles.size());
 	}
 
 	@Test
-	void testFindByCharges() {
-		veh = new ElectricVehicleServiceImpl();
-		Charges newCharges = new Charges(8);
-		List<ElectricVehicle> electricVehicles = veh.findByCharges(newCharges);
-		assertEquals(1, electricVehicles.size());
-	}
-
-	@Test
-	void testDelete() {
-		veh = new ElectricVehicleServiceImpl();
-
-		Long id = 1L;
-		boolean results = veh.delete(id);
-		assertTrue(results);
+	void testDeleteOne() {
+		ElectricVehicleServiceImpl veh = new ElectricVehicleServiceImpl();
+		assertTrue(veh.deleteOne(1L));
 	}
 
 	@Test

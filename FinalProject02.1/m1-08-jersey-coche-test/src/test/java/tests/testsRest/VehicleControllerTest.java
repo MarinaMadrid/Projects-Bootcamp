@@ -32,14 +32,4 @@ class VehicleControllerTest {
 		String mensaje = hello.getEntity().toString();
 		assertEquals("Hola desde VehicleController!", mensaje);
 	}
-	
-	@Test
-	void getCombustionVehicleTest() {
-		Response foundCombustionVehicle = Response.ok(combustionVehicle.get(id)).build();
-		
-		Response foundCVVehicleController = vehicleController.createByType(id);
-
-		assertEquals(foundCombustionVehicle.getEntity().toString(), foundCVVehicleController.getEntity().toString());
-	}
-
 }

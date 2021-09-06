@@ -83,57 +83,9 @@ class HybridVehicleServiceTest {
 	}
 
 	@Test
-	void testFindByAirConditioningTrue() {
-		veh = new HybridVehicleServiceImpl();
-		AirConditioning newAirAc = new AirConditioning(true);
-		List<HybridVehicle> hybridVehicles = veh.findByAirAc(newAirAc);
-		assertEquals(2, hybridVehicles.size());
-	}
-
-	@Test
-	void testFindByAirConditioningFalse() {
-		veh = new HybridVehicleServiceImpl();
-		AirConditioning newAirAc = new AirConditioning(false);
-		List<HybridVehicle> HybridVehicles = veh.findByAirAc(newAirAc);
-		assertEquals(0, HybridVehicles.size());
-	}
-
-	@Test
-	void testFindByTypeEngine() {
-		veh = new HybridVehicleServiceImpl();
-		List<HybridVehicle> hybridVehicles = veh.findByTypeEngine();
-		assertEquals(2, hybridVehicles.size());
-	}
-
-	@Test
-	void testFindByOnOffTrue() {
-		veh = new HybridVehicleServiceImpl();
-		List<HybridVehicle> hybridVehicles = veh.findByOnOff(true);
-		assertEquals(2, hybridVehicles.size());
-	}
-
-	@Test
-	void testFindByOnOffFalse() {
-		veh = new HybridVehicleServiceImpl();
-		List<HybridVehicle> hybridVehicles = veh.findByOnOff(false);
-		assertEquals(0, hybridVehicles.size());
-	}
-
-	@Test
-	void testFindByHydrogenTank() {
-		veh = new HybridVehicleServiceImpl();
-		HydrogenTank newHydrogenTank = new HydrogenTank("Knauf Automotive");
-		List<HybridVehicle> hybridVehicles = veh.findByHydrogenTank(newHydrogenTank);
-		assertEquals(2, hybridVehicles.size());
-	}
-
-	@Test
-	void testDelete() {
-		veh = new HybridVehicleServiceImpl();
-
-		Long id = 1L;
-		boolean results = veh.delete(id);
-		assertTrue(results);
+	void testDeleteOne() {
+		HybridVehicleServiceImpl veh = new HybridVehicleServiceImpl();
+		assertTrue(veh.deleteOne(1L));
 	}
 
 	@Test
