@@ -119,7 +119,6 @@ class ElectricVehicleServiceTest {
 		List<ElectricVehicle> electricVehicles = veh.findByOnOff(false);
 		assertEquals(0, electricVehicles.size());
 	}
-	*/
 	
 	@Test
 	void testFindByLoadingTime() {
@@ -127,7 +126,6 @@ class ElectricVehicleServiceTest {
 		assertEquals(1, electricVehicles.size());
 	}
 	
-	/*
 	@Test
 	void testFindByCharges() {
 		veh = new ElectricVehicleServiceImpl();
