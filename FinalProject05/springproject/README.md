@@ -1,6 +1,12 @@
 # Proyecto Spring
 
-**1.** Ubuntu y docker:
+**1.** A la hora de crear el proyecto, se selecciona la versión 2.5.3. y luego se marca las casillas de dependencias:
+   - Spring Boot DevTools
+   - SpringData JPA
+   - MySQL Driver
+   - Spring Web
+
+**2.** Ubuntu y docker:
 
 ```
 docker run -p 3305:3306 –name springmysql -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABASE=springmysql -d mysql:8.0.25
@@ -8,7 +14,7 @@ docker run -p 3305:3306 –name springmysql -e MYSQL_ROOT_PASSWORD=admin -e MYSQ
 
 Run en dicha imagen en docker.
 
-**2.** Dbeaver:
+**3.** Dbeaver:
 
    - Base de datos/nueva conexión/mysql*
    - General:  
@@ -18,7 +24,7 @@ Run en dicha imagen en docker.
    - Driver properties:
       - allowPublicKeyRetrieval: true
      
-**3.** Eclipse:
+**4.** Eclipse:
 
 ```
 mvn spring-boot:start
