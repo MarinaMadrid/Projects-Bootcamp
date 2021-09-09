@@ -45,7 +45,7 @@ public class BusinessController {
 	@GetMapping("/businesses/{id}")
 	@ApiOperation("Finding a business by id")
 	public ResponseEntity<Business> findById(@ApiParam("The business's primary key") @PathVariable Long id) {
-		log.info("REST request to find one empresa");
+		log.info("REST request to find one business");
 		Optional<Business> businessOpt = this.businessService.findById(id);
 		
 		if (businessOpt.isPresent()) 
@@ -59,13 +59,13 @@ public class BusinessController {
 	@GetMapping("/businesses")
 	@ApiOperation("Showing a list with all businesses")
 	public List<Business> findAll(){
-		log.info("REST request to find all empresas");
+		log.info("REST request to find all businesses");
 		return this.businessService.findAll();
 	}
 	
 	// create one
 	@PostMapping("/businesses")
-	@ApiOperation("Creating a new bsuiness")
+	@ApiOperation("Creating a new business")
 	public ResponseEntity<Business> create(@RequestBody Business business){
 		log.info("REST request to create a new business");
 		
@@ -77,7 +77,7 @@ public class BusinessController {
 	}
 	
 	// update 
-	@PutMapping("/businesses")
+	@PutMapping("/businesses/{id}")
 	@ApiOperation("Updating a business")
 	public ResponseEntity<Business> update(@RequestBody Business business) {
 		log.info("REST request to update an existing business");
@@ -94,6 +94,7 @@ public class BusinessController {
 	public ResponseEntity<Business> delete(@PathVariable Long id){
 		log.info("REST request to delete an existing business");
 		this.businessService.deleteById(id);
+		System.out.println("Se ha borrado la empresa.");
 		return ResponseEntity.noContent().build();
 	}
 	
@@ -104,7 +105,7 @@ public class BusinessController {
 		log.info("REST request to delete all businesses");
 		
 		this.businessService.deleteAll();
-		
+		System.out.println("Se han borrado todas las empresas.");
 		return ResponseEntity.noContent().build();
 		
 	}

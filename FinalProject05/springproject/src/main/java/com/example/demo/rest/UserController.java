@@ -81,12 +81,12 @@ public class UserController {
 	}
 	
 	// update 
-	@PutMapping("/users")
+	@PutMapping("/users/{id}")
 	@ApiOperation("Updating an user")
 	public ResponseEntity<User> update(@RequestBody User user) {
-		log.info("REST request to update an existing business");
+		log.info("REST request to update an existing user");
 		if (user.getId() == null) { // NO HAY ID - POR TANTO NO EXISTE LA EMPRESA A ACTUALIZAR
-			log.warn("Trying to update an existing empresa without id");
+			log.warn("Trying to update an existing user without id");
 			return ResponseEntity.badRequest().build();
 		}
 		
@@ -101,7 +101,7 @@ public class UserController {
 		log.info("REST request to delete an existing user");
 		
 		this.userService.deleteById(id);
-		
+		System.out.println("Se ha borrado el usuario.");
 		return ResponseEntity.noContent().build();
 		
 	}
@@ -113,7 +113,7 @@ public class UserController {
 		log.info("REST request to delete all users");
 		
 		this.userService.deleteAll();
-		
+		System.out.println("Se ha borrado todos los usuarios.");
 		return ResponseEntity.noContent().build();
 		
 	}
@@ -131,7 +131,7 @@ public class UserController {
 	
 	/* ============= CUSTOM CRUD METHODS ================ */
 
-	@GetMapping("/users/name/{userName}")
+	@GetMapping("/users/name/{username}")
 	@ApiOperation("Finding an user by name")
 	public List<User> findByUsername(@PathVariable String username){
 		return this.userService.findByUsername(username);
