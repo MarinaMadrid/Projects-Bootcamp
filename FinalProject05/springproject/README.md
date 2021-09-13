@@ -9,7 +9,7 @@
 **2.** Ubuntu y docker:
 
 ```
-docker run -p 3305:3306 –name springmysql -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABASE=springmysql -d mysql:8.0.25
+docker run -p 3305:3306 -–name springmysql -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABASE=springmysql -d mysql:8.0.25
 ```
 
 Run en dicha imagen en docker.
