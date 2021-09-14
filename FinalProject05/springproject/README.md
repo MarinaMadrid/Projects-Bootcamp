@@ -6,7 +6,13 @@
    - MySQL Driver
    - Spring Web
 
-**2.** Ubuntu y docker:
+**2.** Apache Tomcat
+
+https://www.youtube.com/watch?v=bklP__WoDf8
+
+**3.** Ubuntu y docker:
+
+https://www.padok.fr/en/blog/docker-windows-10
 
 ```
 docker run -p 3305:3306 -–name springmysql -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABASE=springmysql -d mysql:8.0.25
@@ -14,7 +20,7 @@ docker run -p 3305:3306 -–name springmysql -e MYSQL_ROOT_PASSWORD=admin -e MYS
 
 Run en dicha imagen en docker.
 
-**3.** Dbeaver:
+**4.** Dbeaver:
 
    - Base de datos/nueva conexión/mysql*
    - General:  
@@ -24,7 +30,7 @@ Run en dicha imagen en docker.
    - Driver properties:
       - allowPublicKeyRetrieval: true
      
-**4.** Eclipse:
+**5.** Eclipse:
 
 ```
 mvn spring-boot:start
