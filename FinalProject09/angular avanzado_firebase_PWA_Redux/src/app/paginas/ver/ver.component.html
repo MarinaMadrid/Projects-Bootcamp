@@ -1,0 +1,30 @@
+<br><br>
+
+    <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right  mt-5">
+
+            <table class="table mt-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Asignatura</th>
+                    <th scope="col">Nota</th>
+                    <th scope="col">#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{AlumnosModel.id}}</td>
+                    <th>{{AlumnosModel.nombre}}</th>
+                    <th>{{AlumnosModel.apellidos}}</th>
+                    <th>{{AlumnosModel.asignatura}}</th>
+                    <th>{{AlumnosModel.notas}}</th>
+                    <th><button class="btn btn-primary b" [routerLink]="['/home']">volver</button></th>
+                </tr>
+                </tbody>
+            </table>
+
+    </div>
+</div>

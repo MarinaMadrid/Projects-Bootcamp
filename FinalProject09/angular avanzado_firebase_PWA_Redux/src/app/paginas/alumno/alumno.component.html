@@ -1,0 +1,43 @@
+<div class="row text-right">
+    <div class="col">
+        <button class="btn btn-danger" routerLink="/home"><i class="fa fa-arrow-left"></i>Regresas</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="guardar(variableFormulario)" #variableFormulario="ngForm">
+
+<div class="form-group">
+    <label>Firebase ID</label>
+    <input type="text" class="form-control" placeholder="Firebase ID" disabled="disabled" name="id" [(ngModel)]="AlumnosModel.id">
+    <small class="form-text text-muted">Este campo es autogenerado</small>
+</div>
+
+<div class="form-group">
+    <label>Nombre</label>
+    <input type="text" class="form-control" placeholder="Nombre" required name="nombre" [(ngModel)]="AlumnosModel.nombre">
+</div>
+
+<div class="form-group">
+    <label>Apellidos</label>
+    <input type="text" class="form-control" placeholder="apellidos" name="apellidos" [(ngModel)]="AlumnosModel.apellidos">
+</div>
+
+<div class="form-group">
+    <label>Asignatura</label>
+    <input type="text" class="form-control" placeholder="Asignatura" name="asignatura" [(ngModel)]="AlumnosModel.asignatura">
+</div>
+
+<div class="form-group">
+    <label>Notas</label>
+    <input type="text" class="form-control" placeholder="Notas" name="notas" [(ngModel)]="AlumnosModel.notas">
+</div>
+
+      <div class="form-group text-center">
+          <button type="submit" class="btn btn-dark w-25"><i class="fa fa-save"></i> Guardar/Actualizar</button>
+      </div>
+      <br><br><br>
+    </form>
+  </div>
+</div>

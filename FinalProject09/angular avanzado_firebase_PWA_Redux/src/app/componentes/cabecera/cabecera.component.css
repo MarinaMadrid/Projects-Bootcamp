@@ -1,0 +1,14 @@
+#login{
+    margin-left: 50%;
+}
+
+.navbar {
+    /* color: white; */
+    position: fixed;
+    /* top: 0px; */
+    width: 100%;
+}
+
+.big{
+    font-size: xx-large; 
+}

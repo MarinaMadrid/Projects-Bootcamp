@@ -1,0 +1,29 @@
+<br><br>
+<button class="btn btn-primary b" [routerLink]="['/pedir/nuevo']">Crear</button>
+    <div class="row align-items-center justify-content-center">
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-right  mt-5">
+
+            <table class="table mt-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">#</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let alumnos of alumnos; let i = index">
+                    <td>{{alumnos.id}}</td>
+                    <th>{{alumnos.nombre}}</th>
+                    <th>{{alumnos.apellidos}}</th>
+                    <th><button class="btn btn-primary b" [routerLink]="['/ver',alumnos.id]"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                        <button class="btn btn-info" [routerLink]="['/pedir',alumnos.id]"><i class="fa fa-pencil"></i></button>
+                        <button class="btn btn-danger" (click)="borrarUnElemento(alumnos, i)"><i class="fa fa-trash"></i></button></th>
+                </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-outline-danger a" (click)="salir()"><i class="fa fa-reply" aria-hidden="true">Desconectar</i></button>
+            
+    </div>
+</div>
