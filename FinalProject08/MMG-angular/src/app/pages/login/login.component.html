@@ -1,0 +1,27 @@
+<div class="login mb-5">
+  <form class="custom-form mb-5" method="post">
+    <h1>Inicio de sesión</h1>
+    <input
+      type="email"
+      [(ngModel)]="email"
+      name="email"
+      placeholder="Email"
+      required="required"
+    />
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      placeholder="Password"
+      required="required"
+    />
+    <button type="submit" (click)="login()">Iniciar sesión</button>
+    <br>
+    <br>
+    <div class="mx-5">
+      <span>¿No tienes cuenta? Regístrate:</span>
+      <button class="btn btn-info btn-block btn-lg" [routerLink]="['/registro']">Ir a registro</button>
+    </div>
+
+  </form>
+</div>

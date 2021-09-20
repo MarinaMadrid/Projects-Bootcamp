@@ -1,0 +1,34 @@
+<div class="register mb-5">
+  <form class="custom-form" method="post">
+    <h1>Registro</h1>
+    <input
+      type="email"
+      [(ngModel)]="email"
+      name="email"
+      placeholder="Email"
+      required="required"
+    />
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      placeholder="Contraseña"
+      required="required"
+    />
+    <input
+      type="password"
+      [(ngModel)]="confirmPassword"
+      name="password"
+      placeholder="Repite la contraseña"
+      required="required"
+    /> 
+    {{correcto}}
+    <button type="submit" (click)="register()">Registro</button>
+    <br>
+    <br>
+    <div class="mx-5">
+      <span>¿Ya tienes cuenta? Inicie sesión:</span>
+      <button class="btn btn-info btn-block btn-lg" [routerLink]="['/login']">Ir a iniciar sesión</button>
+   </div>
+  </form>
+</div>

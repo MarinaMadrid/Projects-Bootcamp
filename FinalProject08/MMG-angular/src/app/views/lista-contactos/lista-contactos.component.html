@@ -1,0 +1,26 @@
+<div class="main-container">
+  <h1>Lista de contactos</h1>
+  <hr>
+
+  <div class="row">
+    <div class="card animated fadeIn fast col-md-3" *ngFor="let user of users, let i = index">
+      <div class="card-body">
+        <h5 class="card-title">
+          <img src="{{user.avatar}}">
+          <br>
+          {{ user.nombre }}
+          <br>
+          <br>
+          <a [routerLink]="['/contacto', user.id]">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+          </a>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div>
+    <a [routerLink]="['/home']" class="btn btn-danger btn-block">Volver</a>
+  </div>
+</div>

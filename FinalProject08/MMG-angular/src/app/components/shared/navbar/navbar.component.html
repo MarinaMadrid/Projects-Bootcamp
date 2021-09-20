@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" [routerLink]="['home']">
+    <img src="../../../../favicon.ico" width="50" height="50">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['home']">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['login']">Login</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['registro']">Registro</a>
+      </li>
+    </ul>
+    <ul id="iconsUser" class="navbar-nav mr-auto">
+      <i id="loggedUser" class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i><label>{{conectados}}</label>
+      <i id="unloggedUser" class="fa fa-user-times fa-3x mx-3" (click)="salir()" aria-hidden="true"></i>
+    </ul>
+  </div>
+</nav>
+

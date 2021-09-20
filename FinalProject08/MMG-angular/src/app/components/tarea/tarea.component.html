@@ -1,0 +1,19 @@
+<div class="main-container">
+  <h1 class="animated fadeIn"><b>Detalle de la tarea</b></h1>
+  <hr>
+
+  <div class="row animated fadeIn fast">
+    <h3> <b>{{ tarea.titulo }}</b><i class="fa fa-tag mx-2" aria-hidden="true"></i>{{ tarea.id }}</h3>
+    <br><br>
+    <h5>{{ tarea.descripcion }}</h5>
+    <h5><i class="fa fa-exclamation-circle fa-2x" aria-hidden="true"></i> {{ tarea.urgencia }}</h5>
+    <h5><i class="fa fa-user-o fa-2x" aria-hidden="true"></i> {{ tarea.responsable }}</h5>
+    <h5><i class="fa fa-calendar-check-o fa-2x" aria-hidden="true"></i> {{ tarea.fechaInicio }}</h5>
+    <h5><i class="fa fa-calendar-times-o fa-2x" aria-hidden="true"></i> {{ tarea.fechaFin }}</h5>
+    <hr>
+
+    <div class="col-md-4">
+      <a [routerLink]="['/tareas']" class="btn btn-danger btn-block">Volver</a>
+    </div>
+  </div>
+</div>

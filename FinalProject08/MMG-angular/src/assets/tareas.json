@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "titulo": "Base de datos",
+        "descripcion": "Hacer base de datos",
+        "urgencia": 3,
+        "responsable": "Eve",
+        "fechaInicio": "10/09/20",
+        "fechaFin": "17/09/20"
+    },
+    {
+        "id": 2,
+        "titulo": "Testing",
+        "descripcion": "Hacer tests unitarios",
+        "urgencia": 1,
+        "responsable": "George",
+        "fechaInicio": "10/09/20",
+        "fechaFin": "17/09/20"
+    },
+    {
+        "id": 3,
+        "titulo": "Maquetación",
+        "descripcion": "Hacer maquetación web",
+        "urgencia": 2,
+        "responsable": "Janet",
+        "fechaInicio": "10/09/20",
+        "fechaFin": "17/09/20"
+    }
+]

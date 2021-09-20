@@ -1,0 +1,19 @@
+<div class="main-container">
+  <h1 class="animated fadeIn">Detalles del contacto</h1>
+  <hr>
+
+  <div class="row animated fadeIn fast">
+    <div>
+      <img [src]="avatar" class="img-fluid" id="avatarUser">
+      <br>
+      <h3 id="nameUser"> {{ nombre }} {{ apellido }}</h3>
+      <h5><i class="fa fa-id-card-o" aria-hidden="true"></i> {{ id }}</h5>
+      <h5 id="emailUsuario"><i class="fa fa-envelope-o" aria-hidden="true"></i> {{ email }}</h5>
+    </div>
+  </div>
+  <hr>
+  <div class="col-md-4">
+    <a [routerLink]="['/contactos']" class="btn btn-danger btn-block">Volver</a>
+  </div>
+</div>
+
