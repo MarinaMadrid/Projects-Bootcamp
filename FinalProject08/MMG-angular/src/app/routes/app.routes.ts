@@ -9,7 +9,8 @@ import { RegistroComponent } from '../pages/registro/registro.component';
 import { ListaContactosComponent } from '../views/lista-contactos/lista-contactos.component';
 import { ListaTareasComponent } from '../views/lista-tareas/lista-tareas.component';
 import { TareaComponent } from '../components/tarea/tarea.component';
-
+import { TareacrearComponent } from '../pages/tareacrear/tareacrear.component';
+import { TareaactualizarComponent } from '../pages/tareaactualizar/tareaactualizar.component';
 
 const APP_ROUTES: Routes = [
   { path: "home", component: HomeComponent, canActivate: [ CanActivateViaAuthGuard ] },
@@ -19,6 +20,8 @@ const APP_ROUTES: Routes = [
   { path: 'tareas', component: ListaTareasComponent, canActivate: [ CanActivateViaAuthGuard ] },
   { path: 'contacto/:id', component: ContactoComponent, canActivate: [ CanActivateViaAuthGuard ] },
   { path: 'tarea/:id', component: TareaComponent, canActivate: [ CanActivateViaAuthGuard ] },
+  { path: 'tareacrear/:id', component: TareacrearComponent, canActivate: [ CanActivateViaAuthGuard ] },
+  { path: 'tareaactualizar/:id', component: TareaactualizarComponent, canActivate: [ CanActivateViaAuthGuard ] },
   { path: '**', pathMatch: 'full', redirectTo: 'login'}
 ];
 

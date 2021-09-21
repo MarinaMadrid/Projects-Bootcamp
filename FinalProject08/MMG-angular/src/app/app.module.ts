@@ -23,6 +23,8 @@ import { TareaComponent } from './components/tarea/tarea.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { TareacrearComponent } from './pages/tareacrear/tareacrear.component';
+import { TareaactualizarComponent } from './pages/tareaactualizar/tareaactualizar.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     LoginComponent,
     RegistroComponent,
     FooterComponent,
+    TareacrearComponent,
+    TareaactualizarComponent,
   ],
   imports: [
     BrowserModule,

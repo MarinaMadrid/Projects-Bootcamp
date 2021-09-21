@@ -1,0 +1,140 @@
+<div class="main-container">
+    <h1 class="animated fadeIn mx-5">
+      <small><a [routerLink]="['/tareas']" class="btn btn-info btn-block">Volver</a></small>
+      <b class="mx-5">Crear tarea</b>
+    </h1>
+    
+    <hr>
+  
+  <form autocomplete="off" 
+        (ngSubmit)="actualizar(local)" #local="ngForm">  
+  
+    <div class="form-group row"> 
+  
+      <label class="col-2 col-form-label"><i class="fa fa-tag mx-2" aria-hidden="true" ></i>Número</label>
+      <div class="form-row col">
+            <input type="number" class="form-control" placeholder="tarea.id" 
+                   [ngModel]="tarea.id" 
+                   name="id" 
+                   required
+                   [class.is-invalid]="id.invalid && id.touched"  
+                   #id="ngModel">
+   
+                   <small class="text-danger" *ngIf="id.invalid && id.touched">Introduzca el número de tarea</small>  
+      </div>
+  
+      <label class="col-2 col-form-label"><i class="fa fa-tag mx-2" aria-hidden="true" ></i>Título</label>
+      <div class="form-row col">
+            <input type="text" class="form-control" placeholder="Título de la tarea" 
+                   [ngModel]="tarea.titulo" 
+                   name="titulo" 
+                   required
+                   [class.is-invalid]="titulo.invalid && titulo.touched"
+                   #titulo="ngModel">
+  
+                   <small class="text-danger" *ngIf="titulo.invalid && titulo.touched">Introduzca el título de la tarea</small> 
+      </div>
+  
+    </div>
+    <br>
+  
+    <div class="form-group row"> 
+  
+      <label class="col-2 col-form-label"><i class="fa fa-tag mx-2" aria-hidden="true" ></i>Descripcion</label>
+      <div class="form-row col">
+            <input type="text" class="form-control" placeholder="Describe la tarea" 
+                   [ngModel]="tarea.descripcion" 
+                   name="descripcion" 
+                   required
+                   minlength="5"  
+                  [class.is-invalid]="descripcion.invalid && descripcion.touched"  
+                  #descripcion="ngModel">
+  
+                  <small class="text-danger" *ngIf="descripcion.invalid && descripcion.touched">Introduzca la tarea y mínimo 5 letras</small>  
+      </div>
+  
+      <label class="col-2 col-form-label"><i class="fa fa-tag mx-2" aria-hidden="true" ></i>Urgencia</label>
+      <div class="form-row col">
+            <input type="number" class="form-control" placeholder="Describe la tarea" 
+                   [ngModel]="tarea.urgencia" 
+                   name="urgencia" 
+                   required 
+                  [class.is-invalid]="urgencia.invalid && urgencia.touched"
+                  #urgencia="ngModel">
+  
+                  <small class="text-danger" *ngIf="urgencia.invalid && urgencia.touched">Introduzca del 1 al 5 siendo 1 la más urgente</small>  
+      </div>
+    </div>
+    <br>
+
+    <div class="form-group row"> 
+  
+        <label class="col-2 col-form-label"><i class="fa fa-tag mx-2" aria-hidden="true" ></i>Responsable</label>
+        <div class="form-row col">
+              <input type="text" class="form-control" placeholder="Responsable de la tarea" 
+                     [ngModel]="tarea.responsable" 
+                     name="responsable" 
+                     required
+                     minlength="3"  
+                    [class.is-invalid]="responsable.invalid && responsable.touched"  
+                    #responsable="ngModel">
+    
+                    <small class="text-danger" *ngIf="responsable.invalid && responsable.touched">Introduzca la tarea y mínimo 3 letras</small>  
+        </div>
+    
+      </div>
+
+  <hr>
+    
+  <div class="form-group row"> 
+  
+    <label class="col-2 col-form-label"><i class="fa fa-tag mx-2" aria-hidden="true" ></i>Fecha de inicio</label>
+    <div class="form-row col">
+          <input type="date" class="form-control" placeholder="Describe la tarea" 
+                 [ngModel]="tarea.fechaInicio" 
+                 name="fechaInicio" 
+                 required
+                [class.is-invalid]="fechaInicio.invalid && fechaInicio.touched"  
+                #fechaInicio="ngModel">
+
+                <small class="text-danger" *ngIf="fechaInicio.invalid && fechaInicio.touched">Introduzca la fecha de inicio</small>  
+    </div>
+
+    <label class="col-2 col-form-label"><i class="fa fa-tag mx-2" aria-hidden="true" ></i>Fecha final</label>
+    <div class="form-row col">
+          <input type="date" class="form-control" placeholder="Describe la tarea" 
+                 [ngModel]="tarea.fechaFin" 
+                 name="fechaFin" 
+                 required  
+                [class.is-invalid]="fechaFin.invalid && fechaFin.touched"  
+                #fechaFin="ngModel">
+
+                <small class="text-danger" *ngIf="fechaFin.invalid && fechaFin.touched">Introduzca la fecha final</small>  
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button type="submit" class="btn btn-outline-success btn-block">
+        Actualizar
+      </button>
+    </div>
+  </div>
+  
+  </form>
+  
+  
+  <div *ngIf="localTs" class="card border-info mt-2 mx-5" style="max-width: 18rem;">
+    <div class="card-header text-info">Dato actualizado!!</div>
+    <div class="card-body text-info">
+      <h5 class="card-title">{{localTs | json}}</h5>
+    </div>
+  </div>
+  
+  <div *ngIf="localerror" class="card border-danger mt-2 mx-5" style="max-width: 18rem;">
+    <div class="card-header text-danger">Dato no actualizado!!</div>
+    <div class="card-body text-danger">
+      <h5 class="card-title">Introduzca todos los campos <br><br>¡¡Por favor!!</h5>
+    </div>
+  </div>

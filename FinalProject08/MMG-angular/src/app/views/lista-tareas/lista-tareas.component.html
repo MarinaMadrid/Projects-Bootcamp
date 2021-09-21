@@ -3,10 +3,18 @@
   <h1>Lista de tareas</h1>
   <hr>
 
+  <button class="btn btn-primary" routerLink="/tareacrear/nuevo"><i class="fa fa-plus"></i>Agregar</button>
+
+  <br>
+  <br>
+
   <div class="row">
 
+    
     <div class="card animated fadeIn fast col-md-3" *ngFor="let tarea of tareas; let i = index">
+
       <div class="card-body" id="tarea">
+
         <div>
           <h5 class="card-title">{{ tarea.titulo }}</h5>
         </div>
@@ -16,11 +24,17 @@
             <i class="fa fa-eye" aria-hidden="true"></i>
           </button>
         </div>
+
+        <div>
+          <button class="btn btn-outline-success" [routerLink]="['/tareaactualizar',tarea.id]"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+        </div>
+
         <div>
           <button (click)="eliminarTarea(i)" type="reset" class="btn btn-outline-danger">
             <i class="fa fa-window-close" aria-hidden="true"></i>
           </button>
         </div>
+
       </div>
     </div>
   </div>
