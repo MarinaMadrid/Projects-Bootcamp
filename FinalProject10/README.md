@@ -1,7 +1,11 @@
 # Webgrafía
-https://codingpotions.com/angular-login-sesion
+https://codingpotions.com/angular-testing
 
-https://codingpotions.com/angular-seguridad
+https://codecraft.tv/courses/angular/unit-testing/model-driven-forms/
+
+https://codecraft.tv/courses/angular/unit-testing/http-and-jsonp/
+
+https://www.youtube.com/watch?v=HDFNjDKKO6A
 
 
 
