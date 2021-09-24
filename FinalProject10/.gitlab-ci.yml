@@ -1,0 +1,95 @@
+# Archivo para automatizar la ejecución de diversos procesos
+# cada vez que se haga push a la rama master del repositorio de Gitlab
+image: node:14.16.0
+
+# Queremos que se cacheen las instalaciones de npm para que las ejecuciones posteriores
+  # a la primera sean más rápidas. Es decir, que no instale siempre todo
+cache:
+  key:
+    files:
+      - package-lock.json
+  untracked: false
+  paths:
+      - node_modules
+
+# Generamos el Pipeline con varias JOBS que se ejecutan secuencialmente
+# 1. Instalar dependencias
+# 2. Ejecutar linting en el proyecto
+# 3. Ejecutar pruebas
+# 4. Ejecutar Build del proyecto para producción
+# 5. Desplegar la aplicación
+stages:
+  - setup
+  - lint
+  - test
+  - build
+  - deploy
+  - e2e
+  # Aquí iremos poniendo más etapas de ejcución automatizada
+
+# 1. Etapa de SETUP se encarga de instalar las dependencias del package.json
+# Es decir, tiene que hacer el npm install y crear los node_modules
+setup:
+  stage: setup
+  script:
+    - npm i
+  # Definimos que solo se ejecute este script si la subida es a la rama master
+
+# 2. Etapa de LINT se encarga de que pasamos las reglas de linting definidas dentro del proyecto
+# De esta manera evitamos que se suba a la rama master código que no pasa las reglas
+lint:
+  stage: lint
+  script:
+    # - npm link @angular/cli
+    - npm run lint
+    # policy: pull --> Cuando se haga pull del repo, ejecutar el linting
+
+# 3. Ejecutar los Tests del proyecto
+test:
+  image: markhobson/node-chrome:latest
+  stage: test
+  script:
+    - npm run test:headless
+  cache:
+    key:
+      files:
+        - package-lock.json
+    untracked: false
+    paths:
+      - node_modules
+
+# 4. Etapa Build
+build:
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+    # expire_in: 30 days --> tiempo que duran los artifacts generados al hacer la build
+
+# 5. Etapa Deploy --> Publicar en Firebase
+deploy:
+  stage: deploy
+  script:
+    - npm run deploy:firebase
+  dependencies:
+    - build
+
+# 6. Etapa Test e2e --> Ejecuta las pruebas de Cypress
+e2e:
+  image: cypress/browsers:node14.17.0-chrome88-ff89
+  stage: e2e
+  script:
+    # install dependencies
+    - npm ci
+    # start the server in the background
+    - npm run start:ci & npx wait-on https://mmgtestingangular.web.app/
+    # run Cypress tests
+    - npx cypress run --browser chrome --spec cypress/integration/*.spec.js --config "viewportWidth=375,viewportHeight=667"
+  artifacts:
+    when: always
+    paths:
+      - cypress/videos/**/*.mp4
+      - cypress/screenshots/**/*.png
+    expire_in: 1 day

@@ -1,0 +1,11 @@
+/*El cuerpo tiene una separación en la parte de abajo*/
+body {
+    padding-bottom: 50 px;
+
+}
+  
+/*El container-home tiene una separación en la parte de arriba e izquierda*/
+.container-home{
+    margin-top: 20px;
+    margin-left: 20px;
+}

@@ -1,0 +1,34 @@
+<div class="main-container">
+
+  <h1>Lista de tareas</h1>
+  <hr>
+
+  <button class="btn btn-primary" routerLink="/tarea/nuevo"><i class="fa fa-plus"></i>Agregar</button>
+
+  <div class="row" >
+
+
+    <div class="card animated fadeIn fast col-md-3" *ngFor="let tarea of tareas; let i = index">
+      <div class="card-body" id="tarea">
+        <div>
+          <ul>
+            <h4>Nº {{ tarea.id }}</h4>
+            <li class="card-title">Nº Usuario: {{ tarea.user_id }}</li>
+            <li class="card-title">{{ tarea.title }}</li>
+            <hr>
+            <small>Creado: </small>
+            <br>
+            {{ tarea.due_on | date}}
+            <br>
+            <hr>
+           <p class="text-info" *ngIf="tarea.status=='completed'"> {{ tarea.status }}</p>
+           <p class="text-danger" *ngIf="tarea.status=='pending'"> {{ tarea.status }}</p>
+          </ul>
+          <button class="btn btn-danger" (click)="eliminarTarea(i)"><i class="fa fa-trash"></i>Borrar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
