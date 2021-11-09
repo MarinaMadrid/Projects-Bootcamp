@@ -1,5 +1,5 @@
-# Projects-Bootcamp-Imagina-Ingenia
-Proyectos finales realizados en el Bootcamp Full-Stack de Imagina e Ingenia 
+# Projects-Bootcamp
+Proyectos finales realizados en el Bootcamp Full-Stack.
 
 1. Java avanzado
 2. Git, JUnit, Mockito
